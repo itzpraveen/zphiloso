@@ -260,15 +260,14 @@ a {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100vh;
+    height: 60vh;
     width: 100%;
 }
 
 .z-mark {
-    width: 35vw;
-    max-width: 500px;
-    height: auto;
-    opacity: 0.15;
+    height: 60%;
+    width: auto;
+    opacity: 0.2;
     filter: invert(1);
 }
 
