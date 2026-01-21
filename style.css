@@ -337,11 +337,13 @@ a {
     align-items: center;
     height: 60vh;
     width: 100%;
+    overflow: hidden;
 }
 
 .z-mark {
     height: 90%;
     width: auto;
+    max-width: 90vw;
     opacity: 0.2;
     filter: invert(1);
 }
