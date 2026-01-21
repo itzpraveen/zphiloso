@@ -82,25 +82,13 @@ a {
 }
 
 .logo {
-    display: flex;
-    align-items: baseline;
-    gap: var(--space-sm);
+    display: block;
 }
 
-.logo-text {
-    font-family: var(--font-mono);
-    font-size: 0.75rem;
-    font-weight: 500;
-    letter-spacing: 0.2em;
-    color: var(--color-paper);
-}
-
-.logo-sub {
-    font-family: var(--font-mono);
-    font-size: 0.65rem;
-    letter-spacing: 0.1em;
-    color: var(--color-paper);
-    opacity: 0.6;
+.logo-img {
+    height: 24px;
+    width: auto;
+    filter: invert(1);
 }
 
 /* Hero Section
