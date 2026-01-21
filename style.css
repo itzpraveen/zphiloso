@@ -261,13 +261,13 @@ a {
     justify-content: center;
     align-items: center;
     padding: var(--space-2xl) var(--space-lg);
-    min-height: 60vh;
+    min-height: 100vh;
 }
 
 .z-mark {
-    width: 200px;
+    width: 280px;
     height: auto;
-    opacity: 0.15;
+    opacity: 0.12;
     filter: invert(1);
 }
 
