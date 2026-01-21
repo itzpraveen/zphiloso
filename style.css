@@ -1,0 +1,468 @@
+/* ==========================================================================
+   ZPHILOSO — AI Consultancy
+   Aesthetic: Japanese Minimalism meets Editorial Typography
+   ========================================================================== */
+
+:root {
+    --color-ink: #1a1a1a;
+    --color-paper: #f5f3ef;
+    --color-stone: #8a8578;
+    --color-mist: #e8e5df;
+    --color-accent: #c4a35a;
+
+    --font-sans: 'IBM Plex Sans', -apple-system, sans-serif;
+    --font-mono: 'IBM Plex Mono', 'SF Mono', monospace;
+
+    --space-xs: 0.5rem;
+    --space-sm: 1rem;
+    --space-md: 2rem;
+    --space-lg: 4rem;
+    --space-xl: 8rem;
+    --space-2xl: 12rem;
+}
+
+/* Reset & Base
+   ========================================================================== */
+
+*, *::before, *::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    font-size: 16px;
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: var(--font-sans);
+    font-weight: 300;
+    line-height: 1.7;
+    color: var(--color-ink);
+    background-color: var(--color-paper);
+    -webkit-font-smoothing: antialiased;
+    overflow-x: hidden;
+}
+
+/* Film grain overlay */
+.grain {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 1000;
+    opacity: 0.03;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
+}
+
+::selection {
+    background-color: var(--color-accent);
+    color: var(--color-paper);
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+/* Header
+   ========================================================================== */
+
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    padding: var(--space-md) var(--space-lg);
+    z-index: 100;
+    mix-blend-mode: difference;
+}
+
+.logo {
+    display: flex;
+    align-items: baseline;
+    gap: var(--space-sm);
+}
+
+.logo-text {
+    font-family: var(--font-mono);
+    font-size: 0.75rem;
+    font-weight: 500;
+    letter-spacing: 0.2em;
+    color: var(--color-paper);
+}
+
+.logo-sub {
+    font-family: var(--font-mono);
+    font-size: 0.65rem;
+    letter-spacing: 0.1em;
+    color: var(--color-paper);
+    opacity: 0.6;
+}
+
+/* Hero Section
+   ========================================================================== */
+
+.hero {
+    min-height: 100vh;
+    display: grid;
+    grid-template-columns: 1fr auto;
+    align-items: end;
+    padding: var(--space-xl) var(--space-lg) var(--space-lg);
+    position: relative;
+}
+
+.hero-content {
+    max-width: 800px;
+}
+
+.hero-title {
+    font-size: clamp(2.5rem, 8vw, 6rem);
+    font-weight: 300;
+    line-height: 1.1;
+    letter-spacing: -0.02em;
+    margin-bottom: var(--space-md);
+}
+
+.hero-title .line {
+    display: block;
+}
+
+.hero-title .quiet {
+    color: var(--color-stone);
+    font-style: italic;
+}
+
+.hero-desc {
+    font-size: 1.125rem;
+    color: var(--color-stone);
+    max-width: 400px;
+}
+
+.hero-aside {
+    writing-mode: vertical-rl;
+    text-orientation: mixed;
+    display: flex;
+    gap: var(--space-xs);
+    font-family: var(--font-mono);
+    font-size: 0.75rem;
+    letter-spacing: 0.1em;
+    color: var(--color-stone);
+    padding-bottom: var(--space-sm);
+}
+
+/* Section Numbers */
+.section-num {
+    font-family: var(--font-mono);
+    font-size: 0.7rem;
+    letter-spacing: 0.15em;
+    color: var(--color-stone);
+    display: block;
+    margin-bottom: var(--space-sm);
+}
+
+.section-title {
+    font-family: var(--font-mono);
+    font-size: 0.75rem;
+    font-weight: 500;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--color-ink);
+}
+
+/* Services Section
+   ========================================================================== */
+
+.services {
+    padding: var(--space-2xl) var(--space-lg);
+    border-top: 1px solid var(--color-mist);
+}
+
+.services-header {
+    margin-bottom: var(--space-xl);
+}
+
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--space-lg);
+}
+
+.service-card {
+    padding-top: var(--space-md);
+    border-top: 1px solid var(--color-ink);
+    transition: transform 0.4s ease;
+}
+
+.service-card:hover {
+    transform: translateY(-4px);
+}
+
+.service-title {
+    font-size: 1.5rem;
+    font-weight: 400;
+    margin-bottom: var(--space-sm);
+    letter-spacing: -0.01em;
+}
+
+.service-desc {
+    font-size: 0.95rem;
+    color: var(--color-stone);
+    line-height: 1.8;
+}
+
+/* Philosophy Section
+   ========================================================================== */
+
+.philosophy {
+    padding: var(--space-2xl) var(--space-lg);
+    background-color: var(--color-ink);
+    color: var(--color-paper);
+    position: relative;
+    overflow: hidden;
+}
+
+.philosophy::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    right: 10%;
+    width: 300px;
+    height: 300px;
+    border: 1px solid rgba(255,255,255,0.1);
+    border-radius: 50%;
+    transform: translateY(-50%);
+}
+
+.philosophy .section-num {
+    color: var(--color-stone);
+}
+
+.philosophy-content {
+    max-width: 700px;
+    position: relative;
+    z-index: 1;
+}
+
+.philosophy-quote {
+    margin: var(--space-lg) 0;
+}
+
+.philosophy-quote p {
+    font-size: clamp(2rem, 5vw, 3.5rem);
+    font-weight: 300;
+    line-height: 1.2;
+    letter-spacing: -0.02em;
+}
+
+.philosophy-sub {
+    font-size: 1rem;
+    color: var(--color-stone);
+    max-width: 450px;
+}
+
+/* Contact Section
+   ========================================================================== */
+
+.contact {
+    padding: var(--space-2xl) var(--space-lg);
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: var(--space-xl);
+    border-top: 1px solid var(--color-mist);
+}
+
+.contact-text {
+    font-size: 1.125rem;
+    color: var(--color-stone);
+    margin-bottom: var(--space-lg);
+}
+
+.contact-links {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-md);
+}
+
+.contact-link {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+    padding: var(--space-md) 0;
+    border-bottom: 1px solid var(--color-mist);
+    transition: padding-left 0.3s ease, border-color 0.3s ease;
+}
+
+.contact-link:hover {
+    padding-left: var(--space-sm);
+    border-color: var(--color-ink);
+}
+
+.link-label {
+    font-family: var(--font-mono);
+    font-size: 0.7rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--color-stone);
+}
+
+.link-value {
+    font-size: 1.25rem;
+    font-weight: 400;
+}
+
+/* Footer
+   ========================================================================== */
+
+.footer {
+    padding: var(--space-md) var(--space-lg);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-top: 1px solid var(--color-mist);
+}
+
+.footer-left {
+    display: flex;
+    align-items: center;
+    gap: var(--space-sm);
+}
+
+.footer-text {
+    font-family: var(--font-mono);
+    font-size: 0.7rem;
+    letter-spacing: 0.1em;
+    color: var(--color-stone);
+}
+
+.footer-divider {
+    color: var(--color-mist);
+}
+
+/* Subtle Animations
+   ========================================================================== */
+
+/* Staggered entrance for hero text */
+.hero-title .line {
+    opacity: 0;
+    transform: translateY(30px);
+    animation: revealLine 0.8s ease forwards;
+}
+
+.hero-title .line:nth-child(1) { animation-delay: 0.1s; }
+.hero-title .line:nth-child(2) { animation-delay: 0.25s; }
+.hero-title .line:nth-child(3) { animation-delay: 0.4s; }
+
+.hero-desc {
+    opacity: 0;
+    transform: translateY(20px);
+    animation: revealLine 0.8s ease forwards;
+    animation-delay: 0.6s;
+}
+
+@keyframes revealLine {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Service cards stagger on scroll - uses Intersection Observer in JS, fallback visible */
+.service-card {
+    opacity: 0;
+    animation: fadeInUp 0.6s ease forwards;
+}
+
+.service-card:nth-child(1) { animation-delay: 0.1s; }
+.service-card:nth-child(2) { animation-delay: 0.2s; }
+.service-card:nth-child(3) { animation-delay: 0.3s; }
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(40px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Philosophy quote reveal */
+.philosophy-quote p {
+    opacity: 0;
+    animation: revealLine 1s ease forwards;
+    animation-delay: 0.2s;
+}
+
+/* The surprise: a subtle cursor trail effect on the philosophy quote */
+.philosophy-quote p {
+    position: relative;
+    cursor: crosshair;
+}
+
+/* Responsive
+   ========================================================================== */
+
+@media (max-width: 1024px) {
+    :root {
+        --space-lg: 2rem;
+        --space-xl: 5rem;
+        --space-2xl: 8rem;
+    }
+
+    .services-grid {
+        grid-template-columns: 1fr;
+        gap: var(--space-md);
+    }
+
+    .contact {
+        grid-template-columns: 1fr;
+        gap: var(--space-lg);
+    }
+}
+
+@media (max-width: 768px) {
+    :root {
+        --space-lg: 1.5rem;
+        --space-xl: 4rem;
+        --space-2xl: 6rem;
+    }
+
+    .hero {
+        grid-template-columns: 1fr;
+        padding-top: var(--space-2xl);
+    }
+
+    .hero-aside {
+        writing-mode: horizontal-tb;
+        position: absolute;
+        top: var(--space-xl);
+        right: var(--space-lg);
+    }
+
+    .header {
+        padding: var(--space-sm) var(--space-lg);
+    }
+
+    .logo {
+        flex-direction: column;
+        gap: 0.25rem;
+    }
+
+    .philosophy::before {
+        display: none;
+    }
+}
+
+/* Print Styles
+   ========================================================================== */
+
+@media print {
+    .grain { display: none; }
+    .header { position: static; mix-blend-mode: normal; }
+    .logo-text, .logo-sub { color: var(--color-ink); }
+}
