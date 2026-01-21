@@ -252,6 +252,50 @@ a {
     max-width: 450px;
 }
 
+/* Manifesto Section
+   ========================================================================== */
+
+.manifesto {
+    padding: var(--space-2xl) var(--space-lg);
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    gap: var(--space-xl);
+    min-height: 80vh;
+    background-color: var(--color-paper);
+    border-top: 1px solid var(--color-mist);
+}
+
+.manifesto-icon {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.manifesto-z {
+    width: 100%;
+    max-width: 320px;
+    height: auto;
+    opacity: 0.9;
+    transition: transform 0.6s ease;
+}
+
+.manifesto-z:hover {
+    transform: rotate(-2deg) scale(1.02);
+}
+
+.manifesto-content {
+    max-width: 400px;
+}
+
+.manifesto-text {
+    font-size: clamp(1.5rem, 3vw, 2rem);
+    font-weight: 300;
+    line-height: 1.6;
+    letter-spacing: -0.01em;
+    color: var(--color-ink);
+}
+
 /* Contact Section
    ========================================================================== */
 
@@ -319,15 +363,22 @@ a {
     gap: var(--space-sm);
 }
 
+.footer-logo {
+    height: 18px;
+    width: auto;
+    opacity: 0.6;
+    transition: opacity 0.3s ease;
+}
+
+.footer-logo:hover {
+    opacity: 1;
+}
+
 .footer-text {
     font-family: var(--font-mono);
     font-size: 0.7rem;
     letter-spacing: 0.1em;
     color: var(--color-stone);
-}
-
-.footer-divider {
-    color: var(--color-mist);
 }
 
 /* Subtle Animations
@@ -410,6 +461,20 @@ a {
     .contact {
         grid-template-columns: 1fr;
         gap: var(--space-lg);
+    }
+
+    .manifesto {
+        grid-template-columns: 1fr;
+        text-align: center;
+        min-height: auto;
+    }
+
+    .manifesto-content {
+        max-width: 100%;
+    }
+
+    .manifesto-z {
+        max-width: 200px;
     }
 }
 
