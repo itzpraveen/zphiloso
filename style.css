@@ -546,6 +546,72 @@ a {
     .philosophy::before {
         display: none;
     }
+
+    .services-header,
+    .contact-header {
+        display: flex;
+        align-items: center;
+        gap: var(--space-sm);
+        margin-bottom: var(--space-lg);
+    }
+
+    .services-header .section-num,
+    .contact-header .section-num {
+        margin-bottom: 0;
+    }
+}
+
+@media (max-width: 600px) {
+    :root {
+        --space-lg: 1.25rem;
+        --space-xl: 3.5rem;
+        --space-2xl: 5rem;
+    }
+
+    .hero-desc br,
+    .contact-text br {
+        display: none;
+    }
+
+    .hero-desc {
+        max-width: 100%;
+    }
+
+    .global-grid {
+        gap: var(--space-lg);
+    }
+
+    .philosophy-card {
+        display: grid;
+        grid-template-columns: 96px 1fr;
+        align-items: start;
+        gap: var(--space-sm);
+    }
+
+    .card-image-wrapper {
+        margin-bottom: 0;
+        border-radius: 12px;
+    }
+
+    .card-title {
+        font-size: 1.1rem;
+    }
+
+    .card-desc {
+        font-size: 0.92rem;
+    }
+
+    .footer {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: var(--space-xs);
+    }
+}
+
+@media (max-width: 420px) {
+    .philosophy-card {
+        grid-template-columns: 72px 1fr;
+    }
 }
 
 /* Print Styles
